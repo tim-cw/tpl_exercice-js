@@ -1,0 +1,92 @@
+/* ==========================================================================
+   CARS / COMPONENTS
+   ========================================================================== */
+
+.resto {
+    padding: 30px;
+    display: grid;
+
+    place-items: center;
+    gap: 100px;
+}
+
+article {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    transition: transform 0.2s ease-out;
+
+    img {
+        max-height: 80%;
+        max-width: 80%;
+    }
+}
+
+.resto__menu {
+    display: grid;
+    gap: 20px;
+    @media (min-width: $breakpoint-md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.resto__header {
+    text-align: center;
+    grid-column: 1 / -1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: white;
+    padding: 20px;
+
+    span {
+        color: var(--color-primary);
+    }
+}
+
+.types {
+    display: grid;
+    gap: 15px;
+}
+.button-type {
+    background: none;
+    border: 2px gray solid;
+    color: gray;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    padding: 7px;
+    transition: all 0.3s ease-out;
+
+    &.is-active,
+    &:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        box-shadow: 5px 5px 0px 1px var(--color-bg-primary);
+    }
+}
+
+.pizza__image {
+    filter: grayscale(1);
+    transition: filter 0.4s ease-out;
+
+    &.is-active {
+        filter: grayscale(0);
+    }
+}
+
+.button-submit {
+    border: 2px var(--color-primary) solid;
+    background: var(--color-primary);
+    color: white;
+    letter-spacing: 0.1em;
+    padding: 10px 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        background: var(--color-white);
+        color: var(--color-primary);
+    }
+}
